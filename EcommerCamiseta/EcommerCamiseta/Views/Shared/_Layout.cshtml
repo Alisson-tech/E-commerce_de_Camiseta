@@ -19,15 +19,25 @@
                 </button>
                 @Html.ActionLink("Ecommer de Camisetas", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse navbar-right">
-                    <a href='@Url.Action("Perfil", "Usuário")'>
-                        <img class="icones" src='@Url.Content("../icons/perfil.png")' />
-                    </a>
-                    <a href='@Url.Action("Carrinho", "Compra")'>
-                        <img class="icones" src='@Url.Content("../icons/carrinho.png")' />
-                    </a>
+            <div class="nav navbar-text">
+                <form class="form-inline my-2 my-lg-0 pl-3-lg">
+
+                    <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
+                    <button class="btn btn-dark ml-1" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+
+                </form>
             </div>
-                <!--
+            <div class="navbar-collapse collapse navbar-right">
+                <a href='@Url.Action("Perfil", "Usuário")'>
+                    <img class="icones" src='@Url.Content("../icons/perfil.png")' />
+                </a>
+                <a href='@Url.Action("Carrinho", "Compra")'>
+                    <img class="icones" src='@Url.Content("../icons/carrinho.png")' />
+                </a>
+            </div>
+            <!--
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink("Início", "Index", "Home")</li>
@@ -36,7 +46,7 @@
         </ul>
     </div>
     -->
-            </div>
+        </div>
     </div>
     <div class="container body-content">
         <footer>
