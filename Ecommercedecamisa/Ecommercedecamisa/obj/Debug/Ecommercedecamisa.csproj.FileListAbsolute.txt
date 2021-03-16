@@ -256,3 +256,27 @@ C:\Users\Victor\Documents\E-commerce_de_Camiseta\Ecommercedecamisa\Ecommercedeca
 C:\Users\Victor\Documents\E-commerce_de_Camiseta\Ecommercedecamisa\Ecommercedecamisa\obj\Debug\Ecommercedecamisa.csproj.CopyComplete
 C:\Users\Victor\Documents\E-commerce_de_Camiseta\Ecommercedecamisa\Ecommercedecamisa\obj\Debug\Ecommercedecamisa.dll
 C:\Users\Victor\Documents\E-commerce_de_Camiseta\Ecommercedecamisa\Ecommercedecamisa\obj\Debug\Ecommercedecamisa.pdb
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\BouncyCastle.Crypto.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Google.Protobuf.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Compression.LZ4.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Hash.xxHash.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\MySql.Data.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Renci.SshNet.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Buffers.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Memory.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Numerics.Vectors.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Ubiety.Dns.Core.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Zstandard.Net.dll
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Google.Protobuf.pdb
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Google.Protobuf.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Compression.LZ4.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Compression.LZ4.Streams.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\K4os.Hash.xxHash.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\MySql.Data.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\Renci.SshNet.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Buffers.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Memory.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Numerics.Vectors.xml
+C:\Users\Pichau\Documents\Projetos\E-commerce de camisetas\Ecommercedecamisa\Ecommercedecamisa\bin\System.Runtime.CompilerServices.Unsafe.xml

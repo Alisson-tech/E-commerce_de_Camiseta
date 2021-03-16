@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecommercedecamisa.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,19 @@ namespace EcommerCamiseta.Controllers
         public ActionResult Usuario()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult CadUsuario(UsuarioModel user)
+        {
+            var sucesso = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);
+            if (sucesso == true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else {
+
+                return RedirectToAction("Conta", "Usuario");
+            }
         }
 
     }
