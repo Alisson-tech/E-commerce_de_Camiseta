@@ -29,7 +29,12 @@
 
                 </form>
             </div>
+
             <div class="navbar-collapse collapse navbar-right">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Cadastrar", "CadUsuario", "Cadastro",null, new { @class = "cadlog" })</li>
+                    <li>@Html.ActionLink("Login", "Login", "Conta")</li>  
+                </ul>
                 <a href='@Url.Action("Perfil", "Conta")'>
                     <img class="icones" src='@Url.Content("../icons/perfil.png")' />
                 </a>

@@ -1,7 +1,47 @@
 ﻿
-@{
-    ViewBag.Title = "CadastroUsuario";
-}
-
-<h2>CadastroUsuario</h2>
+@{ ViewBag.Title = "CadastroUsuario"; }
+<div class="container-cadastro">
+    <div class="row">
+        <h3 class="titulo">Cadastro</h3>
+    </div>
+    <div class="row">
+        <section id="cadForm">
+            @using (Html.BeginForm("CadUsuario", "Cadastro", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
+                                            <div class="col-md-10">
+                                                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                                        <div class="form-group">
+                                                            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                                            <div class="col-md-10">
+                                                                @Html.PasswordFor(m => m.Email, new { @class = "form-control" })
+                                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                            </div>
+                                                        </div>
+                                                                        <div class="form-group">
+                                                                            @Html.LabelFor(m => m.Cpf, new { @class = "col-md-2 control-label" })
+                                                                            <div class="col-md-10">
+                                                                                @Html.PasswordFor(m => m.Cpf, new { @class = "form-control" })
+                                                                                @Html.ValidationMessageFor(m => m.Cpf, "", new { @class = "text-danger" })
+                                                                            </div>
+                                                                        </div>
+                                                                                        <div class="form-group">
+                                                                                            <div class="col-md-offset-2 col-md-10">
+                                                                                                @Html.CheckBoxFor(m => m.LembrarMe)
+                                                                                                @Html.LabelFor(m => m.LembrarMe)
+                                                                                            </div>
+                                                                                        </div>
+                                                                                                        <div class="form-group">
+                                                                                                            <div class="col-md-offset-2 col-md-10">
+                                                                                                                <input type="submit" class="btn btn-success" value="Entrar" />
+                                                                                                            </div>
+                                                                                                        </div>}
+        </section>
+    </div>
+</div>
 
