@@ -13,7 +13,7 @@ namespace EcommerCamiseta.Controllers
         {
             return View();
         }
-        public ActionResult CadUsuario()
+        public ActionResult Usuario()
         {
             return View();
         }
