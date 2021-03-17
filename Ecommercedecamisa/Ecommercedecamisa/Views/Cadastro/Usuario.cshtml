@@ -3,55 +3,118 @@
 @{ ViewBag.Title = "CadastroUsuario"; }
 <div class="container-cadastro">
     <div class="row">
-        <h3 class="titulo">Cadastro</h3>
+        <h3 class="titulo">Cadastro de Usuário</h3>
     </div>
     <div class="row">
-        <section id="cadForm">
-            @using (Html.BeginForm("CadUsuario", "Cadastro", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
-                    </div>
+        <form id="cadForm">
+            <!-- using (Html.BeginForm("CadUsuario", "Cadastro", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { class = "form-horizontal", role = "form" }))
+            { -->
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Nome, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.CPF, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.CPF, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Senha, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <!--
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                Html.CheckBoxFor(m => m.LembrarMe)
-                Html.LabelFor(m => m.LembrarMe)
             </div>
-        </div>
-            -->
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" class="btn btn-success" value="Entrar" />
-                    </div>
-                </div>}
-        </section>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.CPF, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.CPF, new { @class = "form-control", @id = "cpf" })
+                    @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Senha, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <!--
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    Html.CheckBoxFor(m => m.LembrarMe)
+                    Html.LabelFor(m => m.LembrarMe)
+                </div>
+            </div>
+                -->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" id="cadastrar" class="btn btn-success" value="Entrar" />
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+@section Scripts{
+    <script>
+        function verificar_cpf(cpf) {
+
+            var autorizado = false;
+            var soma = 0;
+            var resto;
+            if (
+                (parseInt(cpf.substring(0, 1))) != (parseInt(cpf.substring(1, 2))) ||
+                (parseInt(cpf.substring(1, 2))) != (parseInt(cpf.substring(2, 3))) ||
+                (parseInt(cpf.substring(2, 3))) != (parseInt(cpf.substring(4, 5))) ||
+                (parseInt(cpf.substring(4, 5))) != (parseInt(cpf.substring(5, 6))) ||
+                (parseInt(cpf.substring(6, 7))) != (parseInt(cpf.substring(7, 6))) ||
+                (parseInt(cpf.substring(7, 8))) != (parseInt(cpf.substring(8, 9))) ||
+                (parseInt(cpf.substring(8, 9))) != (parseInt(cpf.substring(9, 10))) ||
+                (parseInt(cpf.substring(9, 10))) != (parseInt(cpf.substring(10, 11)))
+            ) {
+                for (i = 1; i <= 9; i++) {
+
+                    soma = soma + (parseInt(cpf.substring(i - 1, i)) * (11 - i));
+                    resto = (soma * 10) % 11;
+                }
+                if ((resto == 10) || (resto == 11)) { resto = 0; }
+
+                if (resto == parseInt(cpf.substring(9, 10))) {
+                    soma = 0;
+
+                    for (i = 1; i <= 10; i++) {
+                        soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
+                        resto = (soma * 10) % 11;
+                    }
+
+                    if ((resto == 10) || (resto == 11)) { resto = 0; }
+
+                    if (resto == parseInt(cpf.substring(10, 11))) { autorizado = true; }
+                }
+            }
+            return autorizado;
+        }
+
+        $(document).on('click', '#cadastrar', function () {
+            var cpf = document.getElementById("cpf").value.toString();
+            var aut = verificar_cpf(cpf);
+            if (aut) {
+                var parametro = $("#cadForm").serialize();
+                var url = '@Url.Action("CadUsuario", "Cadastro")'
+                $.ajax({
+                    method: "POST",
+                   url: '@Url.Action("CadUsuario", "Cadastro")',
+                   dataType: "json",
+                   data: parametro,
+                   success: function (result) {
+                       window.location.href = '/Home/Index';
+                   },
+                   error: function (result) {
+
+                   }
+                });
+
+            }
+        })
+    </script>
+}
 

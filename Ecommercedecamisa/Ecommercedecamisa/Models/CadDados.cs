@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Ecommercedecamisa.Helpers;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -27,10 +28,10 @@ namespace Ecommercedecamisa.Models
 
                     comando.CommandText = "Insert into usuario (CPF,email,nome,senha) values (@CPF, @email, @nome, @senha ); ";
 
-                    comando.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = CPF;
-                    comando.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;
-                    comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;
-                    comando.Parameters.Add("@senha", MySqlDbType.VarChar).Value = senha;
+                    comando.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = CPF; //CriptoHelper.HashMD5(CPF);
+                    comando.Parameters.Add("@email", MySqlDbType.VarChar).Value = email;//CriptoHelper.HashMD5(email);
+                    comando.Parameters.Add("@nome", MySqlDbType.VarChar).Value = nome;//CriptoHelper.HashMD5(nome);
+                    comando.Parameters.Add("@senha", MySqlDbType.VarChar).Value = senha;//CriptoHelper.HashMD5(senha);
 
                     ret = (comando.ExecuteNonQuery() > 0);
 

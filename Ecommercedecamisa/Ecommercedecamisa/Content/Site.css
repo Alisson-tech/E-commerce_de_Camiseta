@@ -30,3 +30,11 @@ textarea {
 .cadlog {
     color: red;
 }
+.container-cadastro {
+    width: 400px;
+    margin: 0 auto;
+}
+.titulo {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}

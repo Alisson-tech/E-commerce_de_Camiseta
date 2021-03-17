@@ -24,11 +24,11 @@ namespace EcommerCamiseta.Controllers
             var sucesso = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);
             if (sucesso == true)
             {
-                return RedirectToAction("Index", "Home");
+                return Json(new {mensagem="Sucesso" } );
             }
             else {
 
-                return RedirectToAction("Conta", "Usuario");
+                return Json(new { mensagem = "erro" });
             }
         }
 
