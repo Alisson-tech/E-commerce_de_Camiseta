@@ -34,7 +34,7 @@
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Cadastrar", "Usuario", "Cadastro")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Conta")</li>  
+                    <li>@Html.ActionLink("Login", "Login", "Conta")</li>
                 </ul>
                 <a href='@Url.Action("Perfil", "Conta")'>
                     <img class="icones" src='@Url.Content("../icons/perfil.png")' />
@@ -44,14 +44,14 @@
                 </a>
             </div>
             <!--
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("Início", "Index", "Home")</li>
-            <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
-            <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
-        </ul>
-    </div>
-    -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre", "Sobre", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
+                </ul>
+            </div>
+            -->
         </div>
     </div>
     <div class="container body-content">
@@ -64,6 +64,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/inputmask")
     @RenderSection("scripts", required: false)
 </body>
 </html>
