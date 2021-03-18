@@ -21,14 +21,22 @@ namespace EcommerCamiseta.Controllers
         [HttpPost]
         public ActionResult CadUsuario(UsuarioModel user)
         {
-            var sucesso = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);
-            if (sucesso == true)
+            if (ModelState.IsValid)
             {
-                return Json(new {mensagem="Sucesso" } );
-            }
-            else {
+                var sucesso = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);
+                if (sucesso == true)
+                {
+                    return Json(new { success = true });
+                }
+                else
+                {
 
-                return Json(new { mensagem = "erro" });
+                    return Json(new { success = false });
+                }
+            }
+            else
+            {
+                return Json(new { success = false });
             }
         }
 

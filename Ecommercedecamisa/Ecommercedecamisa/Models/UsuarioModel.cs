@@ -10,6 +10,7 @@ namespace Ecommercedecamisa.Models
     {
         [Required(ErrorMessage = "Informe o CPF", AllowEmptyStrings = false)]
         public string CPF { get; set; }
+
         [Required(ErrorMessage = "Informe o Nome", AllowEmptyStrings = false)]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Informe o Email", AllowEmptyStrings = false)]
