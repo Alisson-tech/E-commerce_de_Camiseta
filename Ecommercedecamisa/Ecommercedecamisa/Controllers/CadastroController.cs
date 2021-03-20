@@ -23,16 +23,8 @@ namespace EcommerCamiseta.Controllers
         {
             if (ModelState.IsValid)
             {
-                var sucesso = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);
-                if (sucesso == true)
-                {
-                    return Json(new { success = true });
-                }
-                else
-                {
-
-                    return Json(new { success = false });
-                }
+                var Cadastro = CadDados.CadUser(user.CPF, user.Nome, user.Email, user.Senha);            
+                return Json(new { success = true });                              
             }
             else
             {

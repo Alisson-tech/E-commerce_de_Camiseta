@@ -8,14 +8,14 @@ namespace Ecommercedecamisa.Models
 {
     public class UsuarioModel
     {
-        [Required(ErrorMessage = "Informe o CPF", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Informe o CPF")]
         public string CPF { get; set; }
 
-        [Required(ErrorMessage = "Informe o Nome", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Informe o Nome")]
         public string Nome { get; set; }
-        [Required(ErrorMessage = "Informe o Email", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Informe o Email")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Informe a Senha", AllowEmptyStrings = false)]
+        [Required(ErrorMessage = "Informe a Senha")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
         public string IdLoja { get; set; }
