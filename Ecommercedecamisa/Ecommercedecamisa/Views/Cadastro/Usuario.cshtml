@@ -7,7 +7,6 @@
     </div>
     <div class="row mt">
         <form id="cadForm" method="post">
-            @Html.AntiForgeryToken()
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="row form-group">
                 @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
@@ -28,13 +27,14 @@
                 <div class="col-md-10">
                     @Html.TextBoxFor(m => m.CPF, new { @class = "form-control", @id = "cpf", @placeholder = "111.111.111-11" })
                     @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
+                    <div class="validador text-danger" id="validador">Informe um CPF válido</div>
                 </div>
             </div>
             <div class="row form-group">
                 @Html.LabelFor(m => m.Senha, new { @class = "col-md-2 control-label" })
                 <div class="col-md-10">
                     @Html.PasswordFor(m => m.Senha, new { @class = "form-control", @id = "senha", @placeholder = "********" })
-                    @Html.ValidationMessageFor(m => m.Senha, "", new { @class = "text-danger" })
+                    @Html.ValidationMessageFor(m => m.Senha, "", new { @class = "text-danger" }) 
                 </div>
             </div>
             <!--
@@ -62,7 +62,7 @@
             $("#cpf").inputmask("mask", { "mask": "999.999.999-99" }, { reverse: true });
         });
 
-        function verificar(cpf,nome,email,senha) {
+        function verificar_cpf(cpf) {
 
             var autorizado = false;
             var soma = 0;
@@ -94,37 +94,48 @@
 
                     if ((resto == 10) || (resto == 11)) { resto = 0; }
 
-                    if (resto == parseInt(cpf.substring(10, 11)) && nome != null && email != null && senha != null) { autorizado = true; }
+                    if (resto == parseInt(cpf.substring(10, 11))) { autorizado = true; }
                 }
             }
             return autorizado;
         }
-
-        $(document).on('click', '#cadastrar', function () {
+        var div = document.getElementById('validador');
+        $(document).on('click', '#cadastrar', function () {           
             var cpf = $("#cpf").val().replace(/[^\d]+/g, '');
             var nome = $("#nome").val();
             var email = $("#email").val();
             var senha = $("#senha").val();
-            var aut = verificar(cpf, nome, email, senha);
+            var aut = verificar_cpf(cpf);
             if (aut) {
-                var parametro = $("#cadForm").serialize();
-                $.ajax({
-                    method: "POST",
-                    url: '@Url.Action("CadUsuario", "Cadastro")',
-                    dataType: "json",
-                    data: parametro,
-                    success: function (result) {
-                        if (result.success) { window.location.href = '/Home/Index'; }
-                    },
-                    error: function (result) {
+                if (nome != "" && email != "" && senha != "") {
+                    var parametro = $("#cadForm").serialize();
+                    $.ajax({
+                        method: "POST",
+                        url: '@Url.Action("CadUsuario", "Cadastro")',
+                        dataType: "json",
+                        data: parametro,
+                        success: function (result) {
+                            if (result.success) { window.location.href = '/Home/Index'; }
+                        },
+                        error: function (result) {
 
-                    }
-                });
+                        }
+                    });
+                }
+                else {
+                    $("#cadForm").submit();
+                }
             }
             else {
-                $("#cadForm").submit();
-            }           
-        })
+                if (nome == "" || email == "" || senha == "") {
+                    $("#cadForm").submit();
+                }
+                div.style.display = "block";
+            }
+        });
+        $(document).on('change', '#cpf', function () {
+            div.style.display = "none";
+        });
     </script>
 }
 

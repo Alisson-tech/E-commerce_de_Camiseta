@@ -37,3 +37,6 @@ textarea {
     font-weight: bolder;
     text-transform: capitalize;
 }
+.validador{
+    display: none;
+}

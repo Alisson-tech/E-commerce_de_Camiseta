@@ -14,11 +14,12 @@ namespace Ecommercedecamisa.Models
         [Required(ErrorMessage = "Informe o Nome")]
         public string Nome { get; set; }
         [Required(ErrorMessage = "Informe o Email")]
+        [EmailAddress(ErrorMessage = "Informe um Email válido")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Informe a Senha")]
         [DataType(DataType.Password)]
         public string Senha { get; set; }
         public string IdLoja { get; set; }
-
+        
     }
 }
