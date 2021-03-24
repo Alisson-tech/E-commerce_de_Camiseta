@@ -12,7 +12,7 @@ namespace Ecommercedecamisa.Models
     {
         public static bool LogUser(string email, string senha)
         {
-            var ret = false;
+            bool ret = false;
 
             using (var conexao = new MySqlConnection())
             {
@@ -26,12 +26,13 @@ namespace Ecommercedecamisa.Models
                     comando.Connection = conexao;
 
 
-                    comando.CommandText = "Select email, senha from usuario where email=@email and senha=@senha;";
+                    comando.CommandText = "select count(*) from usuario where email=@email and senha=@senha;";
 
                     comando.Parameters.Add("@email", MySqlDbType.VarChar).Value = CriptoHelper.HashMD5(email);
                     comando.Parameters.Add("@senha", MySqlDbType.VarChar).Value = CriptoHelper.HashMD5(senha);
 
-                    ret = ((int)comando.ExecuteScalar() > 0);
+                    var teste = comando.ExecuteScalar();
+                    ret = (Convert.ToInt32(comando.ExecuteScalar()) > 0);
 
                 }
 

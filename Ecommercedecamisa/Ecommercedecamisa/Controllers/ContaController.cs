@@ -15,6 +15,10 @@ namespace EcommerCamiseta.Controllers
         {
             return View();
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginModel login)
@@ -29,15 +33,16 @@ namespace EcommerCamiseta.Controllers
             if (achou)
             {
                 FormsAuthentication.SetAuthCookie(login.Email, login.LembrarMe);
+
                 
-                RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
                 ModelState.AddModelError("", "Login inválido.");
+                return View(login);
             }
 
-            return View(login);
         }
     }
 }

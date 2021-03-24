@@ -30,19 +30,21 @@
 
                 </form>
             </div>
-
-            <div class="navbar-collapse collapse navbar-right">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Cadastrar", "Usuario", "Cadastro")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Conta")</li>
-                </ul>
-                <a href='@Url.Action("Perfil", "Conta")'>
-                    <img class="icones" src='@Url.Content("../icons/perfil.png")' />
-                </a>
-                <a href='@Url.Action("Carrinho", "Compra")'>
-                    <img class="icones" src='@Url.Content("../icons/carrinho-de-compras.png")' />
-                </a>
-            </div>
+            @if (!Request.IsAuthenticated)
+            {
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Cadastrar", "Usuario", "Cadastro")</li>
+                        <li>@Html.ActionLink("Login", "Login", "Conta")</li>
+                    </ul>
+                    <a href='@Url.Action("Perfil", "Conta")'>
+                        <img class="icones" src='@Url.Content("../icons/perfil.png")' />
+                    </a>
+                    <a href='@Url.Action("Carrinho", "Compra")'>
+                        <img class="icones" src='@Url.Content("../icons/carrinho-de-compras.png")' />
+                    </a>
+                </div>
+            }
         </div>
     </div>
     <div class="container body-content">
