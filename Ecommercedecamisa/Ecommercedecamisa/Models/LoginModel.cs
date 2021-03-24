@@ -4,19 +4,16 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace EcommerCamiseta.Models
+namespace Ecommercedecamisa.Models
 {
-    public class LoginViewModel
+    public class LoginModel
     {
-        //Requer que o usuário informe usuario
-        [Required(ErrorMessage = "Informe o Usuário")]
-        [Display(Name = "Usuário")]
-        public string Usuario { get; set; }
+        [Required(ErrorMessage = "Informe seu email")]
+        [EmailAddress]
+        public string Email { get; set; }
 
         [DataType(DataType.Password)]
-        //Requer que o usuário informe senha
         [Required(ErrorMessage = "Informe a Senha")]
-        [Display(Name = "Senha")]
         public string Senha { get; set; }
 
 
