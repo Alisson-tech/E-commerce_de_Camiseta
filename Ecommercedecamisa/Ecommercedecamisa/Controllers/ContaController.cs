@@ -15,6 +15,7 @@ namespace EcommerCamiseta.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
@@ -42,7 +43,13 @@ namespace EcommerCamiseta.Controllers
                 ModelState.AddModelError("", "Login inválido.");
                 return View(login);
             }
-
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

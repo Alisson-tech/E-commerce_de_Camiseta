@@ -30,21 +30,30 @@
 
                 </form>
             </div>
-            @if (!Request.IsAuthenticated)
-            {
-                <div class="navbar-collapse collapse navbar-right">
+            <div class="navbar-collapse collapse navbar-right">
+                @if (!Request.IsAuthenticated)
+                {
                     <ul class="nav navbar-nav">
                         <li>@Html.ActionLink("Cadastrar", "Usuario", "Cadastro")</li>
                         <li>@Html.ActionLink("Login", "Login", "Conta")</li>
                     </ul>
-                    <a href='@Url.Action("Perfil", "Conta")'>
-                        <img class="icones" src='@Url.Content("../icons/perfil.png")' />
-                    </a>
-                    <a href='@Url.Action("Carrinho", "Compra")'>
-                        <img class="icones" src='@Url.Content("../icons/carrinho-de-compras.png")' />
-                    </a>
-                </div>
-            }
+                }
+                else
+                {
+                    using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
+                        </ul>   
+                    }
+                }
+                <a href='@Url.Action("Perfil", "Conta")'>
+                    <img class="icones" src='@Url.Content("../icons/perfil.png")' />
+                </a>
+                <a href='@Url.Action("Carrinho", "Compra")'>
+                    <img class="icones" src='@Url.Content("../icons/carrinho-de-compras.png")' />
+                </a>
+            </div>
         </div>
     </div>
     <div class="container body-content">

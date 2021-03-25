@@ -9,6 +9,7 @@ namespace EcommerCamiseta.Controllers
     public class LojaController : Controller
     {
         // GET: Loja
+        [AllowAnonymous]
         public ActionResult Lojas()
         {
             return View();

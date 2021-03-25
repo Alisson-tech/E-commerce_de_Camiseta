@@ -14,11 +14,13 @@ namespace EcommerCamiseta.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public ActionResult Usuario()
         {
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult CadUsuario(UsuarioModel user)
         {
             if (ModelState.IsValid)

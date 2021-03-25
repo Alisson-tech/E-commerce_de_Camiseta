@@ -9,6 +9,7 @@ namespace EcommerCamiseta.Controllers
     public class PesquisaController : Controller
     {
         // GET: Pesquisa
+        [AllowAnonymous]
         public ActionResult RetProdutos()
         {
             return View();
